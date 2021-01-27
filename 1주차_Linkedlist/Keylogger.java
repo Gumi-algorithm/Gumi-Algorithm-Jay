@@ -1,40 +1,57 @@
 package com.selfstudy;
 
-import java.util.*;
+//import java.util.*;
+import java.io.*;
+import java.util.LinkedList;
 
 class Keylogger{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int tc = sc.nextInt();
-        
-        for(int t = 0; t < tc; t++){
-            LinkedList<Character> password = new LinkedList<>();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+
+        int tc = Integer.parseInt(br.readLine());
+//        Scanner sc = new Scanner(System.in);
+//        int tc = sc.nextInt();
+
+        for(int i = 0; i < tc; i++){
+            LinkedList<Character> password = new LinkedList<Character>(); // 리스트 생성
+
             int index = 0;
-            String str = sc.next();
-            
-            for(int i = 0; i < str.length(); i++){
-                if(str.charAt(i) != '<' && str.charAt(i) != '>' && str.charAt(i) != '-'){
-                    password.add(index, str.charAt(i));
+            String str = br.readLine();
+//            String str = sc.next();
+
+            for(int j = 0; j < str.length(); j++){
+                if(str.charAt(j) != '<' && str.charAt(j) != '>' && str.charAt(j) != '-'){
+                    password.add(index, str.charAt(j));
                     index++;
                     continue;
                 }
-                if(str.charAt(i) == '<' && index != 0){
+                if(str.charAt(j) == '<' && index != 0){
                     index--;
                     continue;
                 }
-                if(str.charAt(i) == '>' && index <= password.size() - 1){
+                if(str.charAt(j) == '>' && index <= password.size() - 1){
                     index++;
                     continue;
                 }
-                if(str.charAt(i) == '-' && index != 0){
+                if(str.charAt(j) == '-' && index != 0){
                     password.remove(index - 1);
                     index--;
                 }
             }
-            for(int j = 0; j < password.size(); j++){
-                System.out.print(password.get(j));
+            StringBuilder sb = new StringBuilder();
+            for(int p = 0; p < password.size(); p++){
+                sb.append(password.get(p));
             }
-            System.out.println();
+            System.out.print(sb);
+//            for(int k = 0; k < password.size(); k++){
+//                System.out.print(password.get(k));
+//            }
+//            System.out.println();
         }
+        System.out.println();
+        bw.flush();
+        bw.close();
     }
 }
