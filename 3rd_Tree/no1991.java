@@ -41,7 +41,7 @@ class Tree{
             if(left != '.'){
                 root.left = new Node(left);
             }
-            else if(right != '.'){
+            if(right != '.'){
                 root.right = new Node(right);
             }
         }
