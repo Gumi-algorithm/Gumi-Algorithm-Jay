@@ -22,7 +22,9 @@ public class no2798 {
     }
     static int getMax(int tot, int cnt, int start){
         if(cnt == R){
-            return tot > M ? 0 : tot;
+            if(tot < M){
+                return tot;
+            }
         }
         if (start == N) {
             return 0;
