@@ -40,7 +40,7 @@ public class no11559 {
 
         while(true){
             v = new boolean[12][6]; // 루프돌면서 방문초기화
-            crashCnt = 0;   // 터진 뿌요들 카운팅
+            crashCnt = 0;   // 터진 횟수 
             for (int i = 11; i >= 0; i--) {
                 for (int j = 5; j >= 0; j--) {
                     if (map[i][j] != '.' && !v[i][j]) { // 아직 방문 안했고 블럭일 경우 bfs 시작
@@ -48,7 +48,7 @@ public class no11559 {
                     }
                 }
             }
-            if (crashCnt == 0) {    // 터진 뿌 없을 때 종료
+            if (crashCnt == 0) {    // 터진 횟수 0이면 나옴 
                 break;
             }
             else{
@@ -90,7 +90,7 @@ public class no11559 {
             }
         }
         if (cntLine >= 4) { // 4개이상 연결됬을때 = 깰 수 있다.
-            crashCnt++; // 터트린 뿌요
+            crashCnt++; // 펑 !  카운트 
             for(int i = 0; i < crushed.size(); i++){
                 Point tmp = crushed.get(i);
                 map[tmp.x][tmp.y] = '.';
