@@ -29,7 +29,7 @@ public class no2812 {
             stack.push(num[i]);
         }
 
-        for(int i=0; i<stack.size(); i++){
+        for(int i=0; i<N - delete; i++){    // 무야호 !
             sb.append(stack.get(i));
         }
 
