@@ -28,32 +28,39 @@ public class no3709 {
             R = Integer.parseInt(st.nextToken());
             map = new boolean[N + 2][N + 2];
  
-            int x = 0, y = 0;
+            
             
             for (int i = 0; i < R; i++) {
                 st = new StringTokenizer(br.readLine());
-                x = Integer.parseInt(st.nextToken());
-                y = Integer.parseInt(st.nextToken());
+                int x = Integer.parseInt(st.nextToken());
+                int y = Integer.parseInt(st.nextToken());
                 
                 map[x][y] = true; 
             }
+            
+            for(int i = 0; i < map.length; i++) {
+            	for(int j = 0; j < map.length; j++) {
+            		System.out.print(map[i][j] + " ");
+            	}
+            	System.out.println();
+            }
             // 레이저 배치
             st = new StringTokenizer(br.readLine());
-            x = Integer.parseInt(st.nextToken());
-            y = Integer.parseInt(st.nextToken());
+            int lx = Integer.parseInt(st.nextToken());
+            int ly = Integer.parseInt(st.nextToken());
             
             int dir = 0;
             
-            if(x == 0) 
+            if(lx == 0) 
             	dir = 3;
-            else if(x == N + 1) 
+            else if(lx == N + 1) 
             	dir = 2;
-            else if(y == 0) 
+            else if(ly == 0) 
             	dir = 0;
-            else if(y == N + 1) 
+            else if(ly == N + 1) 
             	dir = 1; 
             
-            dfs(x, y, dir);
+            dfs(lx, ly, dir);
             
             System.out.println(finX + " " + finY);
         }
