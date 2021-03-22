@@ -32,9 +32,9 @@ public class no17129 {
 
         for (int i = 0; i < N; i++) {
             String ipt = br.readLine();
-            // System.out.println(st);
+            
             for (int j = 0; j < M; j++) {
-                // System.out.println(st.substring(j, j+1));
+                // System.out.println(ipt.substring(j, j+1));
                 map[i][j] = Integer.parseInt(ipt.substring(j, j + 1));
                 if (map[i][j] == 2) {
                     queue.offer(new Point(i, j));
