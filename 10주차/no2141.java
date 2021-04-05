@@ -9,7 +9,7 @@ public class no2141 {
 
     static int N;
     static long total = 0;
-    static LinkedList<Point> list;
+    static ArrayList<Point> list;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,7 +18,7 @@ public class no2141 {
         StringTokenizer st;
 
         N = Integer.parseInt(br.readLine());
-        list = new LinkedList<>();
+        list = new ArrayList<>();
 
         for(int i=0; i<N; i++) {
             st = new StringTokenizer(br.readLine());
