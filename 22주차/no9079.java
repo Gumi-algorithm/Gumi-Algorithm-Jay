@@ -28,7 +28,7 @@ public class no9079 {
                 st = new StringTokenizer(br.readLine());
                 for(int j = 0; j < 3; j++){
                     idx *= 2;
-                    System.out.println(idx);
+                   
                     if(st.nextToken().equals("H")) idx++;
                 }
             }
