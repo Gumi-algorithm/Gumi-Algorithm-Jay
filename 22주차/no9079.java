@@ -1,7 +1,7 @@
 package BojAlgorithms;
 /*
 BOJ_9079 동전 게임
-어려워서 검색해서 참고했습니다..
+검색해서 참고했습니다..
  */
 import java.io.*;
 import java.util.LinkedList;
